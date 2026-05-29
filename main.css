@@ -83,19 +83,34 @@ ul {
     background: linear-gradient(to right, #2c2c2c, #1f1f1f);
     border:7.5px solid var(--border_dark);
     border-radius: 50px;
-
     text-decoration: none;
 
     
-    transition: all 0.3s ease-in-out;
+    transition: 
+        all 0.3s ease-in-out;
 }
 .offscreen-menu a:hover {
     font-size: 2rem;
-    padding: 0rem 1rem;
+    padding: 0rem 1.5rem;
     left: 100%;
-    transform: translate(-60%,-10%)rotate(45deg)scale(1.05);
+    transform: translate(-60%,-10%)rotate(45deg);
     text-decoration: underline;
 }
+
+.offscreen-menu a:active {
+    transition:
+        transform 0.2s ease-out,
+        color 0.05s ease, 
+        box-shadow 0.1s ease,
+        border 0.1s ease,
+        background 0.1s ease;
+    
+    transform: translate(-60%,-10%)rotate(45deg)scale(1.05);
+    color: #1a1a1a;
+    box-shadow: inset 0px 0px 0px 5px var(--accent_dark);
+    background: var(--accent);
+}
+
 
 .offscreen-menu.active {
     transform: translate(20%,0%)rotate(-45deg);
@@ -449,14 +464,13 @@ header {
     
     color: rgb(255, 255, 255);
 
-    justify-content: space-evenly;
+    justify-content: flex-start;
     text-align: center;
     align-items: stretch;
-
     width: 90vw;
     height: 90vh;
 
-    padding: 2rem;
+    padding: 2rem 2rem;
     max-width: 612px;
 
     max-height: 800px;
@@ -496,14 +510,14 @@ header {
     display: flex;
     font-family: 'Zenless';
     font-size: 1.5rem;
-    margin: 0;
+    margin: 1rem 0rem;
     padding: 0.5rem 1rem;
 }
 
 footer {
     background: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(2px);
-    border-top:1px solid var(--border);
+    border-top:5px solid var(--border_dark);
 
     margin-top: 10rem;
 
